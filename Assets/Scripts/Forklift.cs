@@ -16,7 +16,9 @@ public class Forklift : MonoBehaviour
     WheelCollider rearLeft;
     WheelCollider rearRight;
 
+    Transform fork;
     Transform forkBase;
+
     float targetForkHeight;
     float forkHeight;
 
@@ -28,9 +30,13 @@ public class Forklift : MonoBehaviour
         rearLeft = wheelBase.GetChild(2).GetComponent<WheelCollider>();
         rearRight = wheelBase.GetChild(3).GetComponent<WheelCollider>();
 
-        forkBase = transform.GetChild(1);
+        fork = transform.GetChild(1);
+        forkBase = fork.GetChild(1);
+
         targetForkHeight = forkMin;
         forkHeight = targetForkHeight;
+
+        GetComponent<Rigidbody>().centerOfMass = new Vector3(0, 0.5f, 0);
     }
 
     public void FixedUpdate()
@@ -73,7 +79,7 @@ public class Forklift : MonoBehaviour
         }
 
         forkHeight = Mathf.Lerp(forkHeight, targetForkHeight, forkDamp);
-        forkBase.transform.localPosition = new Vector3(0, forkHeight, 1.15f);
+        forkBase.transform.localPosition = new Vector3(0, forkHeight, 0.15f);
     }
 
     void SetVisuals(WheelCollider collider)

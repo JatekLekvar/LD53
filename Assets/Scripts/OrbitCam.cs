@@ -62,7 +62,7 @@ public class OrbitCam : MonoBehaviour
         Vector3 camOrigin = cam.position;
         Vector3 rayDir = (camOrigin - origin).normalized;
 
-        RaycastHit[] hits = Physics.RaycastAll(origin, rayDir, finalZoom, ~LayerMask.GetMask("Forklift"));
+        RaycastHit[] hits = Physics.RaycastAll(origin, rayDir, finalZoom, LayerMask.GetMask("StaticWall"));
 
         isObstructed = false;
         if (hits.Length > 0)
