@@ -10,6 +10,11 @@ public class QuestManager : MonoBehaviour
     {
         UIControls.score++;
         Debug.Log($"Quest {index} cleared");
+
+        if(UIControls.score >= questsForTheDay.Length){
+            Debug.Log("Megvagyunk Mára!");
+            //Load nexz scene
+        }
     }
 }
 

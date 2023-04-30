@@ -24,6 +24,11 @@ public class UIControls : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            score++;
+        }
+
         scoreText.text = score.ToString();
     }
 }

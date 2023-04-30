@@ -7,6 +7,7 @@ public class PackagingTrigger : MonoBehaviour
     public GameObject palletPrefab;
 
     List<Item> items = new List<Item>();
+    private List<GameObject> pallets = new List<GameObject>();
     Transform spawnpoint;
 
     void Start()
@@ -30,6 +31,10 @@ public class PackagingTrigger : MonoBehaviour
             }
 
         }
+        if(collider.gameObject.tag == "Pallet"){
+            Debug.Log("Pallet added");
+            pallets.Add(collider.gameObject);
+        }
     }
 
     void OnTriggerExit(Collider collider)
@@ -45,6 +50,11 @@ public class PackagingTrigger : MonoBehaviour
     void OnPackageAdded(Item package)
     {
         Quaternion rot = transform.rotation;
+
+        foreach (GameObject obj in pallets)
+        {
+            GameObject.Destroy(obj);
+        }
 
         GameObject mp = Instantiate(megaPackagePrefab, spawnpoint.position, rot);
         MegaPackage mpc = mp.GetComponent<MegaPackage>();
