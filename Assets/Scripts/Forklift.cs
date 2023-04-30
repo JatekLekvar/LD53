@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class Forklift : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class Forklift : MonoBehaviour
     public float forkMin;
     public float forkMax;
     public float forkDamp;
+    public float maxAngle;
+    public float angleDamp;
 
     WheelCollider frontLeft;
     WheelCollider frontRight;
@@ -18,9 +19,12 @@ public class Forklift : MonoBehaviour
 
     Transform fork;
     Transform forkBase;
+    Transform drivingWheel;
 
     float targetForkHeight;
     float forkHeight;
+    float targetAngle;
+    float angle;
 
     public void Start()
     {
@@ -32,11 +36,30 @@ public class Forklift : MonoBehaviour
 
         fork = transform.GetChild(1);
         forkBase = fork.GetChild(1);
+        drivingWheel = transform.GetChild(3).GetChild(0);
 
         targetForkHeight = forkMin;
         forkHeight = targetForkHeight;
 
-        GetComponent<Rigidbody>().centerOfMass = new Vector3(0, 0.5f, 0);
+        targetAngle = 0;
+        angle = targetAngle;
+
+        GetComponent<Rigidbody>().centerOfMass = new Vector3(0, 0.3f, -0.3f);
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (targetAngle > 0.01f)
+            {
+                targetAngle = 0;
+            }
+            else
+            {
+                targetAngle = maxAngle;
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -52,6 +75,7 @@ public class Forklift : MonoBehaviour
 
         frontLeft.steerAngle = steering;
         frontRight.steerAngle = steering;
+        drivingWheel.localEulerAngles = new Vector3(0, steering * 3f, 0);
 
         rearLeft.motorTorque = motor;
         rearRight.motorTorque = motor;
@@ -61,10 +85,10 @@ public class Forklift : MonoBehaviour
         rearLeft.brakeTorque = braking;
         rearRight.brakeTorque = braking;
 
-        SetVisuals(frontLeft);
-        SetVisuals(frontRight);
-        SetVisuals(rearLeft);
-        SetVisuals(rearRight);
+        SetVisuals(frontLeft, true);
+        SetVisuals(frontRight, false);
+        SetVisuals(rearLeft, true);
+        SetVisuals(rearRight, false);
 
         if (Input.GetKey(KeyCode.Q))
         {
@@ -79,11 +103,13 @@ public class Forklift : MonoBehaviour
         }
 
         forkHeight = Mathf.Lerp(forkHeight, targetForkHeight, forkDamp);
-        forkBase.transform.localPosition = new Vector3(0, forkHeight, 0.15f);
+        forkBase.transform.localPosition = new Vector3(0, forkHeight, 0);
 
+        angle = Mathf.Lerp(angle, targetAngle, angleDamp);
+        forkBase.localEulerAngles = new Vector3(-angle, 0, 0);
     }
 
-    void SetVisuals(WheelCollider collider)
+    void SetVisuals(WheelCollider collider, bool flip)
     {
         Transform visualWheel = collider.transform.GetChild(0);
 
@@ -93,6 +119,6 @@ public class Forklift : MonoBehaviour
 
         visualWheel.transform.position = position;
         visualWheel.transform.rotation = rotation;
-        visualWheel.transform.Rotate(new Vector3(0, 0, 90));
+        visualWheel.transform.Rotate(new Vector3(flip ? 180 : 0, 90, 0));
     }
 }

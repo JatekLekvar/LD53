@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OrbitCam : MonoBehaviour
 {
-    public Rigidbody target;
+    public Transform target;
 
     public float lookSensitivity;
     public float lookDamp;
@@ -97,7 +97,7 @@ public class OrbitCam : MonoBehaviour
     {
         elapsed += Time.fixedDeltaTime;
 
-        Vector3 desiredPosition = target.worldCenterOfMass;
+        Vector3 desiredPosition = target.position;
         transform.position = Vector3.Lerp(transform.position, desiredPosition, 0.1f);
 
         if (elapsed > 0.5f)
