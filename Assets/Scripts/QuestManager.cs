@@ -13,7 +13,9 @@ public class QuestManager : MonoBehaviour
 
         if(UIControls.score >= questsForTheDay.Length){
             Debug.Log("Megvagyunk Mára!");
-            //Load nexz scene
+            Time.timeScale = 0f;
+            UIControls.endScreen.gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

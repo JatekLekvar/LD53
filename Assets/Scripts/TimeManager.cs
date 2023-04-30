@@ -8,9 +8,9 @@ public class TimeManager : MonoBehaviour
 
     public float dayDuration;
 
-    [SerializeField]float totalTime = 0;
-    [SerializeField]float currentTime = 0;
-
+    [SerializeField] float totalTime = 0;
+    [SerializeField] float currentTime = 0;
+    [SerializeField] GameObject loseScreen;
 
     void Update()
     {
@@ -20,6 +20,7 @@ public class TimeManager : MonoBehaviour
         if(currentTime >= (dayDuration * 0.584f)){
             //Ide lehet irni kódot amikor lejár az idő 
             Debug.Log("Game Over");
+
         }
     }
 
