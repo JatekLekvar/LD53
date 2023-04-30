@@ -3,7 +3,32 @@ guid: 388e28f7aa7a4014da5ed4fe7042911e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: f8fe7c7d7f86c5e478153a6252cbebdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button
+    second: {fileID: 2100000, guid: f0aa7a5904b73564f9323b07cbb04ab6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: 4d05f1f0990e54246a50424a485c20a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Speeker
+    second: {fileID: 2100000, guid: 56e1e0b247ad8ff4ead77407d3f9ccf3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tv
+    second: {fileID: 2100000, guid: c21a871eee9fe3e40a8f9efb9f8e55ce, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
