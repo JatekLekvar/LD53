@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIControls : MonoBehaviour
 {
@@ -58,6 +59,15 @@ public class UIControls : MonoBehaviour
 
     public void OnNextLevelButtonPressed(){
         Time.timeScale = 1f;
-        //Load Next scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void OnExitButtonPressed(){
+        Application.Quit();
+    }
+
+    public void OnRetryButtonPressed(){
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
