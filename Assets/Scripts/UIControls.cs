@@ -48,4 +48,16 @@ public class UIControls : MonoBehaviour
 
         scoreText.text = score.ToString();
     }
+
+
+    public void OnContinueButtonPressed(){
+        pauseMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
+    }
+
+    public void OnNextLevelButtonPressed(){
+        Time.timeScale = 1f;
+        //Load Next scene
+    }
 }
