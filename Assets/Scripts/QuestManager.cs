@@ -10,6 +10,13 @@ public class QuestManager : MonoBehaviour
     {
         UIControls.score++;
         Debug.Log($"Quest {index} cleared");
+
+        if(UIControls.score >= questsForTheDay.Length){
+            Debug.Log("Megvagyunk Mára!");
+            Time.timeScale = 0f;
+            UIControls.endScreen.gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
 
