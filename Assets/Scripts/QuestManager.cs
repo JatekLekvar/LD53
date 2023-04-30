@@ -4,9 +4,11 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public Quest[] questsForTheDay;
+    public UIControls UIControls;
 
     public void OnQuestCleared(int index)
     {
+        UIControls.score++;
         Debug.Log($"Quest {index} cleared");
     }
 }

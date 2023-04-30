@@ -80,6 +80,7 @@ public class Forklift : MonoBehaviour
 
         forkHeight = Mathf.Lerp(forkHeight, targetForkHeight, forkDamp);
         forkBase.transform.localPosition = new Vector3(0, forkHeight, 0.15f);
+
     }
 
     void SetVisuals(WheelCollider collider)
