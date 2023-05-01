@@ -30,6 +30,10 @@ public class QuestValidator : MonoBehaviour
                     }
                 }
 
+                if(quest.requiredParts.Length < mp.items.Length){
+                    quest.cleared = false;
+                }
+
                 if (quest.cleared)
                 {
                     questManager.OnQuestCleared(i);

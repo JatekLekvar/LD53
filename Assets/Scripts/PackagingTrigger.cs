@@ -52,7 +52,6 @@ public class PackagingTrigger : MonoBehaviour
     void OnPackageAdded(Item package)
     {
         Quaternion rot = transform.rotation;
-        //rot = Quaternion.Euler(Vector3.left * 90f);
 
         foreach (GameObject obj in pallets)
         {
@@ -71,5 +70,8 @@ public class PackagingTrigger : MonoBehaviour
         {
             Destroy(item.gameObject);
         }
+
+        pallets = new List<GameObject>();
+        items = new List<Item>();
     }
 }

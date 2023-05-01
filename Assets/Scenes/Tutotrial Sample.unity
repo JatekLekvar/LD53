@@ -370,6 +370,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7843822247267580444, guid: 353e9d2830273a541bd1b244972ff627, type: 3}
+      propertyPath: m_text
+      value: 'Take the required items from here.
+
+        Be cautious, you only have
+        so many items.'
+      objectReference: {fileID: 0}
     - target: {fileID: 7843822248539493779, guid: 353e9d2830273a541bd1b244972ff627, type: 3}
       propertyPath: m_Name
       value: Tutorial Level
