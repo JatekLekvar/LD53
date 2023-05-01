@@ -17,10 +17,9 @@ public class TimeManager : MonoBehaviour
         totalTime += Time.deltaTime;
         currentTime = totalTime % dayDuration;
 
-        if(currentTime >= (dayDuration * 0.584f)){
+        if(currentTime >= 450 + 8*75){
             //Ide lehet irni kódot amikor lejár az idő 
             Debug.Log("Game Over");
-
         }
     }
 
