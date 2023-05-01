@@ -7799,6 +7799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PackagingTable
       objectReference: {fileID: 0}
+    - target: {fileID: 2442043493414485659, guid: f206ba8117a5bce4ba31941fd2415178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.63
+      objectReference: {fileID: 0}
     - target: {fileID: 6811922509388896669, guid: f206ba8117a5bce4ba31941fd2415178, type: 3}
       propertyPath: m_RootOrder
       value: 15

@@ -12,7 +12,7 @@ public class PackagingTrigger : MonoBehaviour
 
     void Start()
     {
-        spawnpoint = transform.GetChild(0);
+        spawnpoint =  transform.Find("SpawnPoint");
     }
 
     void OnTriggerEnter(Collider collider)
