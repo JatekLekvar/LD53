@@ -19,6 +19,8 @@ public class RotatingUI : MonoBehaviour
             switch(megaPackageScript.items[i]){
                 case "barrel" : images[i].GetComponent<Image>().sprite = megaPackageScript.sprites["barrel"];
                 break;
+                case "flash" : images[i].GetComponent<Image>().sprite = megaPackageScript.sprites["flash"];
+                break;
                 default : Debug.Log("Nincs ilyen nevű item!");
                 break;
             }
