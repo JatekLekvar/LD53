@@ -14,9 +14,11 @@ public class QuestUIUpdater : MonoBehaviour
         foreach(Transform child in transform){
             if(child.tag == "Quest Text"){
                 questTexts.Add(child.GetComponent<TextMeshProUGUI>());
+                child.gameObject.SetActive(false);
             }
             if(child.tag == "Quest Image"){
                 questImages.Add(child.GetComponent<Image>());
+                child.gameObject.SetActive(false);
             }
         }
 
@@ -25,6 +27,8 @@ public class QuestUIUpdater : MonoBehaviour
     }
 
     public void UpdateTextAndImage(string questText, Sprite questImage, int index){
+        questTexts[index].gameObject.SetActive(true);
+        questImages[index].gameObject.SetActive(true);
         questTexts[index].text = questText;
         questImages[index].sprite = questImage;
     }
