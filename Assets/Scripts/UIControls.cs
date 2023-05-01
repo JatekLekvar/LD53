@@ -53,7 +53,7 @@ public class UIControls : MonoBehaviour
         //Debug Keys
         if (Input.GetKeyDown(KeyCode.K))
         {
-            score++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         if (Input.GetKeyDown(KeyCode.L))
