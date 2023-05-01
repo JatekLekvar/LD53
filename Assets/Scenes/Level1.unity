@@ -4658,6 +4658,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4995485515193551699, guid: 6b0a7b107e9625e49a33807064ab64fb, type: 3}
+      propertyPath: questManager
+      value: 
+      objectReference: {fileID: 1594023279}
     - target: {fileID: 8476046728292457713, guid: 6b0a7b107e9625e49a33807064ab64fb, type: 3}
       propertyPath: m_Name
       value: QuestValidator
