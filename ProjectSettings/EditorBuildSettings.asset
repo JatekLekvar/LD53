@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/KlenoLevel.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Tutorial.unity
+    guid: a9631a971bea8344f845551b00d57893
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 047ec06547412064a8a41ed8cf38094e
   m_configObjects: {}

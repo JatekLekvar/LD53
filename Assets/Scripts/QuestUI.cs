@@ -43,13 +43,13 @@ public class QuestUI : MonoBehaviour
                     break;
                     case "flash" : questUIUpdaterScript.UpdateTextAndImage("- Flash", sprites["flash"], k);
                     break;
-                    case "radioactive" : questUIUpdaterScript.UpdateTextAndImage("- Radioactive Barrel", sprites["radioactive"], k);
+                    case "radioactive" : questUIUpdaterScript.UpdateTextAndImage("- Uranium", sprites["radioactive"], k);
                     break;
                     case "tv" : questUIUpdaterScript.UpdateTextAndImage("- TV", sprites["tv"], k);
                     break;
                     case "vase" : questUIUpdaterScript.UpdateTextAndImage("- Vase", sprites["vase"], k);
                     break;
-                    case "woodenBox" : questUIUpdaterScript.UpdateTextAndImage("- Wooden Box", sprites["woodenBox"], k);
+                    case "woodenBox" : questUIUpdaterScript.UpdateTextAndImage("- Box", sprites["woodenBox"], k);
                     break;
                     default : Debug.Log("Nincs ilyen nevű item!");
                     break;

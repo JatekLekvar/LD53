@@ -9,10 +9,12 @@ public class PackagingTrigger : MonoBehaviour
     List<Item> items = new List<Item>();
     private List<GameObject> pallets = new List<GameObject>();
     Transform spawnpoint;
+    Transform palletSpawnPoint;
 
     void Start()
     {
         spawnpoint =  transform.Find("SpawnPoint");
+        palletSpawnPoint =  transform.Find("PalletSpawnPoint");
     }
 
     void OnTriggerEnter(Collider collider)
@@ -50,6 +52,7 @@ public class PackagingTrigger : MonoBehaviour
     void OnPackageAdded(Item package)
     {
         Quaternion rot = transform.rotation;
+        //rot = Quaternion.Euler(Vector3.left * 90f);
 
         foreach (GameObject obj in pallets)
         {
@@ -60,8 +63,9 @@ public class PackagingTrigger : MonoBehaviour
         MegaPackage mpc = mp.GetComponent<MegaPackage>();
         mpc.items = items.ConvertAll(i => i.identifier).ToArray();
 
-        Instantiate(palletPrefab, spawnpoint.position - Vector3.up * 0.5f, rot);
+        rot = Quaternion.Euler(Vector3.up * 0f);
 
+        Instantiate(palletPrefab, spawnpoint.position - Vector3.up * 0.5f, rot);
         Destroy(package.gameObject);
         foreach (Item item in items)
         {
