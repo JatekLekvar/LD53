@@ -10,6 +10,7 @@ public class UIControls : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] public GameObject endScreen;
+    [SerializeField] private GameObject questScreen;
     public int score = 0;
 
     void Awake(){
@@ -17,6 +18,8 @@ public class UIControls : MonoBehaviour
         pauseMenu.gameObject.SetActive(false);
         endScreen = GameObject.Find("End UI");
         endScreen.gameObject.SetActive(false);
+        questScreen = GameObject.Find("QuestUI");
+        questScreen.gameObject.SetActive(false);
     }
 
     void Update()
@@ -33,6 +36,18 @@ public class UIControls : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1f;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            questScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            questScreen.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         //Debug Keys

@@ -667,6 +667,10 @@ MonoBehaviour:
   spriteList:
   - {fileID: 21300000, guid: 1aedaa05472c5cb4c860e841a527c90d, type: 3}
   - {fileID: 21300000, guid: 732391fb1add7e34996d07e96f3b50b6, type: 3}
+  - {fileID: 21300000, guid: 677744ce14a606c419142d4c00d9b485, type: 3}
+  - {fileID: 21300000, guid: ed4b63ff9d271284ea436ed7f857a625, type: 3}
+  - {fileID: 21300000, guid: 8b520cc6ffdd9f54db44dbc41fb6b75c, type: 3}
+  - {fileID: 21300000, guid: 5719f8195e799d749ac0c757f8d11a5a, type: 3}
 --- !u!54 &1425750709202988865
 Rigidbody:
   m_ObjectHideFlags: 0

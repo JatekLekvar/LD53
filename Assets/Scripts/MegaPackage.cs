@@ -17,6 +17,10 @@ public class MegaPackage : MonoBehaviour
         sprites = new Dictionary<string, Sprite>();
         sprites.Add("barrel" , spriteList[0]);
         sprites.Add("flash" , spriteList[1]);
+        sprites.Add("radioactive" , spriteList[2]);
+        sprites.Add("tv" , spriteList[3]);
+        sprites.Add("vase" , spriteList[4]);
+        sprites.Add("woodenBox" , spriteList[5]);
     }
 
     void Update(){
