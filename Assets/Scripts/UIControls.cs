@@ -56,11 +56,13 @@ public class UIControls : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.L))
         {
             endScreen.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
         }
+        */
 
         scoreText.text = score.ToString();
     }

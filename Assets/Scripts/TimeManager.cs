@@ -20,6 +20,8 @@ public class TimeManager : MonoBehaviour
         if(currentTime >= 450 + 8*75){
             //Ide lehet irni kódot amikor lejár az idő 
             Debug.Log("Game Over");
+            Time.timeScale = 0f;
+            loseScreen.gameObject.SetActive(true);
         }
     }
 

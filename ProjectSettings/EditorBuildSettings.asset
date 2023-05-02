@@ -10,5 +10,11 @@ EditorBuildSettings:
     guid: a9631a971bea8344f845551b00d57893
   - enabled: 1
     path: Assets/Scenes/Done Levels/Level 1.unity
-    guid: 047ec06547412064a8a41ed8cf38094e
+    guid: dccf4a1e1efe488488e2cd5392292720
+  - enabled: 1
+    path: Assets/Scenes/Done Levels/level 2.unity
+    guid: 775b5bd8dd19cad42aa30f0775fd373a
+  - enabled: 1
+    path: Assets/Scenes/Done Levels/End Screen.unity
+    guid: c185fbf789a60a54aaa310ab96b109fa
   m_configObjects: {}
